@@ -20,11 +20,13 @@ jobs:
         - name: Echo Github veriable
           env:
             APP_VERSION: "2.3.4"
+            RUNNER_CONTEXT: ${{ toJson(runner) }}
           run: |
                 echo "This job trigger by ${{github.event_name }}";
                 echo "This repository is ${{github.repository }}";
                 echo "This branch is ${{github.ref_name }}";
                 echo "This  is a ${{env.APP_NAME }} version ${{env.APP_VERSION }}";
+                echo "$RUNNER_CONTEXT"
                 
   hello-job:
     runs-on: ubuntu-latest
