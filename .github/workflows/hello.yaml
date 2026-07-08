@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo "Hello GitHub Actions!"
+      - name: retrieve client payload
+        run: echo "Client send status = ${{github.event.client_payload.status}}"
   Seccond-job:
     runs-on: windows-latest
     needs: hello-job
