@@ -30,7 +30,7 @@ jobs:
                 echo "This DataBase Password is ${{ secrets.DB_PASSWORD }}";
                 
   hello-job:
-    if: ${{ github.event_name !='on-demand-test'}}
+    if: ${{ github.event_name !='repository_dispatch'}}
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
@@ -38,7 +38,7 @@ jobs:
       - name: retrieve client payload
         run: echo "Client send status = ${{github.event.client_payload.status }}"
   Seccond-job:
-    if: ${{ github.event_name !='on-demand-test'}}
+    if: ${{ github.event_name !='repository_dispatch'}}
     runs-on: windows-latest
     needs: hello-job
     steps:
