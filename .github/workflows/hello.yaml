@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: Echo Github veriable
+          if: ${{ runner.os == 'Linux' }}
           env:
             APP_VERSION: "2.3.4"
             RUNNER_CONTEXT: ${{ toJson(runner) }}
