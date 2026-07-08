@@ -1,6 +1,6 @@
 name: Hello World
 env:
-  APP_NAME:"Demo Application"
+  APP_NAME: "Demo Application"
 on:
   push:
     branches: [main]
