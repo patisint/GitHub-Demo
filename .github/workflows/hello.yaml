@@ -5,10 +5,17 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  build:
+  hello-job:
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
         run: echo "Hello GitHub Actions!"
+  Seccond-job:
+    runs-on: windows-latest
+    steps:
+      - name: Run a one-line script
+        run: echo "This job is runing on ${{runner.os}}"
+    
+        
 
   
